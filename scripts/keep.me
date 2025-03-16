@@ -1,0 +1,19 @@
+SELECT SKU, SUM(total_price) AS total_vendas
+FROM vendas
+GROUP BY SKU;
+
+SELECT delivery_country, SUM(total_price) AS total_vendas
+FROM vendas
+GROUP BY delivery_country;
+
+SELECT discount_coupon, AVG(discount_value) AS desconto_medio
+FROM vendas
+GROUP BY discount_coupon;
+
+SELECT EXTRACT(MONTH FROM date_sold) AS mes, SUM(total_price) AS total_vendas
+FROM vendas
+GROUP BY mes;
+
+SELECT SKU, AVG(unit_price) AS preco_medio
+FROM vendas
+GROUP BY SKU;
